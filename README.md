@@ -10,12 +10,6 @@
 
 
 
-
-
-
-
-
-
 <br><br><br><br><br>
 
 ### Part 1.1; Defining instance variables
@@ -29,18 +23,6 @@
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
 <br><br><br><br><br>
 
 ### Part 1.2; Defining construction
@@ -50,20 +32,7 @@
 	* `String` representative of a `lastName`
 	* `Double[]` representative of a collection of `testScores`
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+	
 
 <br><br><br><br><br>
 
@@ -73,15 +42,6 @@
 	* Define a [getter and setter](https://en.wikipedia.org/wiki/Mutator_method#Java_example) for each of the instance variables declared in the `Student` class.
 		* **Note:** There should not be a `setter` for the `testScore`. This object's [state](https://cs.stackexchange.com/questions/6536/definition-of-the-state-of-an-object-in-oop) will be [mutated](https://en.wikibooks.org/wiki/Scheme_Programming/Mutability) via a `takeExam` method mentioned below.
 		* Additionally, define a getter, `getNumberOfExamsTaken()`, which returns the total number of exams taken by this student.
-
-
-
-
-
-
-
-
-
 
 
 <br><br><br><br><br>
@@ -115,11 +75,6 @@
 			```
 
 
-
-
-
-
-
 <br><br><br><br><br>
 
 * **Define method `addExamScore(double examScore)`**
@@ -150,14 +105,6 @@
 
 
 
-
-
-
-
-
-
-
-
 <br><br><br><br><br>
 
 * **Define method `setExamScore(int examNumber, double newScore)`**
@@ -185,11 +132,6 @@
 			Exam Scores:
 				Exam 1 -> 150
 			```
- 
- 
- 
- 
- 
  
  
 <br><br><br><br><br>
@@ -255,10 +197,7 @@
 			    Exam 4 -> 0
 			```
 			
-			
-			
-			
-			
+
 <br><br><br><br><br>
 <br><br><br><br><br>
 <br><br><br><br><br>
@@ -272,17 +211,6 @@
 * Declare an instance variable for each of the `Classroom` properties:
 	* `Student[] students`
 		* a collection of student objects
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -302,32 +230,12 @@
 
 
 
-
-
-
-
-
-
-
-
-
-
 <br><br><br><br><br>
 
 ### Part 2.3; Defining methods
 
 * **Define method `getStudents()`**
 	* Define a getter which returns the composite `students` object.	
-
-
-
-
-
-
-
-
-
-
 
 
 <br><br><br><br><br>
@@ -360,14 +268,6 @@
 			```
 			125.0
 			```
-
-
-
-
-
-
-
-
 
 
 
@@ -414,12 +314,6 @@
 			    Exam 3 -> 250
 			    Exam 4 -> 0]
 			```
-			
-			
-
-
-
-
 
 <br><br><br><br><br>
 
