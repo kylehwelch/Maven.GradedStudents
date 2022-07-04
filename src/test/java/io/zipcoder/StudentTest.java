@@ -125,7 +125,7 @@ public class StudentTest {
                 "Exam 3 --> 99.0\n" +
                 "Exam 4 --> 95.0";
         //Then
-        String actualToString = student.studentString(student);
+        String actualToString = student.toString();
         Assert.assertEquals(expectedToString, actualToString);
     }
 }

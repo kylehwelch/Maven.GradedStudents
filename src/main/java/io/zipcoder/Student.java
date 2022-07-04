@@ -10,10 +10,13 @@ public class Student {
 
 
     //  \/\/\/  THIS PART WAS SUPPOSED TO @OVERRIDE THE TOSTRING FUNCTION, BUT I DON'T KNOW WHY OR HOW
-    public String studentString(Student student){
-        return "Student Name: " + this.firstName + " " + this.lastName + "\n" +
-                "> Average Score: " + student.getAverageExamScore() + "\n" +
-                "> Exam Scores:\n" + student.getExamScores();
+    @Override
+    public String toString(){
+        String studentString =  "Student Name: " + this.firstName + " " + this.lastName + "\n" +
+                "> Average Score: " + getAverageExamScore() + "\n" +
+                "> Exam Scores:\n" + getExamScores();
+        System.out.println(studentString);
+        return studentString;
     }
 
     //CONSTRUCTORS
@@ -48,7 +51,6 @@ public class Student {
     public void setExamScore (int examNumber, Double examScore) {
         //ENTER EXAM NUMBER, NOT INDEX NUMBER
         this.examScores.set(examNumber-1, examScore);
-
     }
 
     //GETTERS
