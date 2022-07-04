@@ -84,4 +84,48 @@ public class StudentTest {
         String actualSetExam = student.getExamScores();
         Assert.assertEquals(expectedSetExam, actualSetExam);
     }
+    @Test
+    public void testGetAverageExamScore() {
+        Student student = new Student();
+        //Given
+        int exam1 = 25;
+        int exam2 = 25;
+        int exam3 = 75;
+        int exam4 = 75;
+        //When
+        student.addExamScore(exam1);
+        student.addExamScore(exam2);
+        student.addExamScore(exam3);
+        student.addExamScore(exam4);
+        double expectedAverage = 50.0;
+        //Then
+        double actualAverage = student.getAverageExamScore();
+        Assert.assertEquals(expectedAverage, actualAverage, 0.001);
+    }
+    @Test
+    public void testToString() {
+        Student student = new Student();
+        //Given
+        student.setFirstName("Garfield");
+        student.setLastName("Lasagna");
+        int exam1 = 50;
+        int exam2 = 55;
+        int exam3 = 99;
+        int exam4 = 95;  //average 74.75
+        //When
+        student.addExamScore(exam1);
+        student.addExamScore(exam2);
+        student.addExamScore(exam3);
+        student.addExamScore(exam4);
+        String expectedToString = "Student Name: Garfield Lasagna\n" +
+                "> Average Score: 74.75\n" +
+                "> Exam Scores:\n" +
+                "Exam 1 --> 50.0\n" +
+                "Exam 2 --> 55.0\n" +
+                "Exam 3 --> 99.0\n" +
+                "Exam 4 --> 95.0";
+        //Then
+        String actualToString = student.studentString(student);
+        Assert.assertEquals(expectedToString, actualToString);
+    }
 }

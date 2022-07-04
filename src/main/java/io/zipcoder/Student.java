@@ -9,6 +9,13 @@ public class Student {
     ArrayList<Double> examScores = new ArrayList<Double>();
 
 
+    //  \/\/\/  THIS PART WAS SUPPOSED TO @OVERRIDE THE TOSTRING FUNCTION, BUT I DON'T KNOW WHY OR HOW
+    public String studentString(Student student){
+        return "Student Name: " + this.firstName + " " + this.lastName + "\n" +
+                "> Average Score: " + student.getAverageExamScore() + "\n" +
+                "> Exam Scores:\n" + student.getExamScores();
+    }
+
     //CONSTRUCTORS
     public Student () {
         this.firstName = "";
@@ -64,5 +71,12 @@ public class Student {
     }
     public int getNumberOfExamsTaken() {
         return this.examScores.size();
+    }
+    public double getAverageExamScore() {
+        double sum = 0;
+        for (int i = 0 ; i < this.examScores.size() ; i++) {
+            sum += this.examScores.get(i);
+        }
+        return (sum / this.examScores.size());
     }
 }
