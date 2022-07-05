@@ -8,8 +8,6 @@ public class Student {
     private String lastName;
     ArrayList<Double> examScores = new ArrayList<Double>();
 
-
-    //  \/\/\/  THIS PART WAS SUPPOSED TO @OVERRIDE THE TOSTRING FUNCTION, BUT I DON'T KNOW WHY OR HOW
     @Override
     public String toString(){
         String studentString =  "Student Name: " + this.firstName + " " + this.lastName + "\n" +

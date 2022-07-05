@@ -2,6 +2,12 @@ package io.zipcoder;
 
 public class Classroom {
 
+    // LEARN WHAT AN OBJECT ARRAY IS AND HOW IT WORKS!!!
+    // learn about hashmaps???
+    //
+
+
+
     Student[] students;
 
     //INITIALIZERS
