@@ -12,11 +12,9 @@ public class StudentTest {
         //Given
         String expectedFirstName = "Leroy";
         String expectedLastName = "Jenkins";
-
         //When
         student.setFirstName(expectedFirstName);
         student.setLastName(expectedLastName);
-
         //Then
         String actualFirstName = student.getFirstName();
         String actualLastName = student.getLastName();

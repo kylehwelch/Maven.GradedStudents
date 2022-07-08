@@ -1,20 +1,21 @@
 package io.zipcoder;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class Student {
     //INITIALIZING VARIABLES
     private String firstName;
     private String lastName;
-    ArrayList<Double> examScores = new ArrayList<Double>();
+    List<Double> examScores = new ArrayList<Double>();
 
     @Override
     public String toString(){
-        String studentString =  "Student Name: " + this.firstName + " " + this.lastName + "\n" +
-                "> Average Score: " + getAverageExamScore() + "\n" +
-                "> Exam Scores:\n" + getExamScores();
-        System.out.println(studentString);
-        return studentString;
+//        String studentString =  "Student Name: " + this.firstName + " " + this.lastName + "\n" +
+//                "> Average Score: " + getAverageExamScore() + "\n" +
+//                "> Exam Scores:\n" + getExamScores();
+//        return studentString;
+        return this.firstName;
     }
 
     //CONSTRUCTORS
@@ -66,12 +67,13 @@ public class Student {
             else if (i == this.examScores.size()-1) {theList += ("Exam " + y + " --> " + this.examScores.get(i));}
             y++;
         }
-        System.out.println(theList);
+//        System.out.println(theList);
         return theList;
     }
     public int getNumberOfExamsTaken() {
         return this.examScores.size();
     }
+
     public double getAverageExamScore() {
         double sum = 0;
         for (int i = 0 ; i < this.examScores.size() ; i++) {
