@@ -2,13 +2,15 @@ package io.zipcoder;
 
 import java.util.*;
 
-public class Classroom implements Comparator<Student>{
+public class Classroom{
 
 
     //INITIALIZERS
     public Student[] students;
 //    List<Student> students = new ArrayList<Student>();
     int maxNumberOfStudents;
+
+    private StudentComparator studentComparator = new StudentComparator();
 
 
     //MISC METHODS
@@ -28,7 +30,7 @@ public class Classroom implements Comparator<Student>{
                 students[i] = null;
             }
         }
-        for (int i = 0 ; i <= students.length ; i++) {
+        for (int i = 0 ; i < students.length-1 ; i++) {
             if ((students[i] == null) && (students[i + 1] == null)) {break;}
             if ((students[i] == null) && (students[i + 1] != null)) {
                 students[i] = students[i + 1];
@@ -71,31 +73,11 @@ public class Classroom implements Comparator<Student>{
     }
 
     public void getStudentsByScore(Student[] students) {
+        StudentComparator sc = new StudentComparator();
+        List<Student> smartest = new ArrayList<>(Arrays.asList(students));
 
-        Map<Double, Student> smartest = new TreeMap();
         for (int i = 0 ; i < students.length ; i++) {
-            smartest.put(students[i].getAverageExamScore(), students[i]);
+            Arrays.sort(students, sc);
         }
-
-        System.out.println(smartest.toString());
-
-
-//        List<Student> smartest = new ArrayList<>(Arrays.asList(students));
-
-//        smartest.sort(smartest, (a,b) -> a.getAverageExamScore().compareTo(b.getAverageExamScore()));
-
-//        int highest = 0;
-//        for (int i = 0 ; i < students.length ; i++) {
-//            stuEx.put(students[i].toString(), students[i].getAverageExamScore());
-//            }
-//        System.out.println(stuEx);
-
-
-    }
-
-
-    @Override
-    public int compare(Student o1, Student o2) {
-        return 0;
     }
 }

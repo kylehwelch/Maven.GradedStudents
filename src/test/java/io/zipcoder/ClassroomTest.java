@@ -25,8 +25,9 @@ public class ClassroomTest {
         double expected = 125.0;
         // Then
         System.out.println(actual);
-        Assert.assertEquals(expected, actual);
+        Assert.assertEquals(expected, actual, 0.0);
     }
+
 
     @Test
     public void testAddStudent() {
@@ -75,6 +76,8 @@ public class ClassroomTest {
         Student[] acStu = new Student[]{herman, gerald, clyde, dingo};
         Classroom classroom = new Classroom(acStu);
         classroom.getStudentsByScore(acStu);
+
+
 
     }
 

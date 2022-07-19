@@ -11,11 +11,11 @@ public class Student {
 
     @Override
     public String toString(){
-//        String studentString =  "Student Name: " + this.firstName + " " + this.lastName + "\n" +
-//                "> Average Score: " + getAverageExamScore() + "\n" +
-//                "> Exam Scores:\n" + getExamScores();
-//        return studentString;
-        return this.firstName;
+        String studentString =  "Student Name: " + this.firstName + " " + this.lastName + "\n" +
+                "> Average Score: " + getAverageExamScore() + "\n" +
+                "> Exam Scores:\n" + getExamScores();
+        return studentString;
+//        return this.firstName;
     }
 
     //CONSTRUCTORS
