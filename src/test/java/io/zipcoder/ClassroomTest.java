@@ -68,18 +68,16 @@ public class ClassroomTest {
         ArrayList<Double> clyScores = new ArrayList<>(Arrays.asList(75.0, 50.0));
         ArrayList<Double> dinScores = new ArrayList<>(Arrays.asList(50.0, 40.0));
 
-        Student herman = new Student("Herman", "Buttlicker", gerScores);
-        Student gerald = new Student("Gerald", "Sillyface", herScores);
+        Student herman = new Student("Herman", "Buttlicker", herScores);
+        Student gerald = new Student("Gerald", "Sillyface", gerScores);
         Student clyde = new Student("Clyde", "Theglide", clyScores);
         Student dingo = new Student("Dingo", "Atemybaby", dinScores);
 
         Student[] acStu = new Student[]{herman, gerald, clyde, dingo};
         Classroom classroom = new Classroom(acStu);
-        classroom.getStudentsByScore(acStu);
+        acStu = classroom.getStudentsByScore(acStu);
+        Student[] exStu = new Student[]{gerald, clyde, herman, dingo};
 
-
-
+        Assert.assertEquals(exStu, acStu);
     }
-
-
 }

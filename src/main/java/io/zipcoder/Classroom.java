@@ -72,12 +72,25 @@ public class Classroom{
         return (total / students.length);
     }
 
-    public void getStudentsByScore(Student[] students) {
+    public Student[] getStudentsByScore(Student[] students) {
         StudentComparator sc = new StudentComparator();
-        List<Student> smartest = new ArrayList<>(Arrays.asList(students));
-
-        for (int i = 0 ; i < students.length ; i++) {
-            Arrays.sort(students, sc);
+        boolean swapped = true;
+        while (swapped) {
+            swapped = false;
+            for (int i = 0; i < students.length-1; i++) {
+                if (sc.compare(students[i], students[i+1]) > 0) {
+                    Student tempStu = students[i];
+                    students[i] = students [i+1];
+                    students[i+1] = tempStu;
+                    swapped = true;
+                }
+            }
         }
+        List<Student> smartest = new ArrayList<>(Arrays.asList(students));
+        return smartest.toArray(new Student[0]);
     }
+
+
+
+
 }
