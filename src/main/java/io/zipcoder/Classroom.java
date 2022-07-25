@@ -90,7 +90,28 @@ public class Classroom{
         return smartest.toArray(new Student[0]);
     }
 
-
-
+    public String getGradeBook(Student[] students){
+//        An A is 10th percentile.
+//        A B is 11th and 29th percentile.
+//        A C is 30th and 50th percentile.
+//        A D 51st and 89th percentile.
+//        An F is 11th percentile.
+        students = getStudentsByScore(students);
+        double percentile;
+        StringBuilder gradeBook = new StringBuilder();
+        for (int i = 0; i < students.length; i++) {
+            percentile = 100 * (students.length - i)/students.length;
+            if (percentile >= 90) {
+                gradeBook.append(students[i].getFirstName() + " " + students[i].getLastName() + " A\n");
+            } else if (percentile >= 71 && percentile < 90) {
+                gradeBook.append(students[i].getFirstName() + " " + students[i].getLastName() + " B\n");
+            } else if (percentile >= 50 && percentile < 71) {
+                gradeBook.append(students[i].getFirstName() + " " + students[i].getLastName() + " C\n");
+            } else if (percentile >= 11 && percentile < 50) {
+                gradeBook.append(students[i].getFirstName() + " " + students[i].getLastName() + " D\n");
+            } else gradeBook.append(students[i].getFirstName() + " " + students[i].getLastName() + " F\n");
+        }
+        return gradeBook.toString();
+    }
 
 }
