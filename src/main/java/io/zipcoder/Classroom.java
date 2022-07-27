@@ -99,17 +99,33 @@ public class Classroom{
         students = getStudentsByScore(students);
         double percentile;
         StringBuilder gradeBook = new StringBuilder();
+        List<Double> examScores = new ArrayList<>();
+        for (Student s : students) {examScores.add(s.getAverageExamScore());}
+
+
         for (int i = 0; i < students.length; i++) {
-            percentile = 100 * (students.length - i)/students.length;
-            if (percentile >= 90) {
-                gradeBook.append(students[i].getFirstName() + " " + students[i].getLastName() + " A\n");
-            } else if (percentile >= 71 && percentile < 90) {
-                gradeBook.append(students[i].getFirstName() + " " + students[i].getLastName() + " B\n");
-            } else if (percentile >= 50 && percentile < 71) {
-                gradeBook.append(students[i].getFirstName() + " " + students[i].getLastName() + " C\n");
-            } else if (percentile >= 11 && percentile < 50) {
-                gradeBook.append(students[i].getFirstName() + " " + students[i].getLastName() + " D\n");
-            } else gradeBook.append(students[i].getFirstName() + " " + students[i].getLastName() + " F\n");
+            for (int j = 0; j < examScores.size(); j++) {
+                if (students[i].getAverageExamScore() == examScores.get(j)) {
+                    percentile = 100 * ((examScores.size() - j) / (double)examScores.size());
+
+                    if (percentile >= 90) {
+                        gradeBook.append(students[i].getFirstName() + " " + students[i].getLastName() + " A\n");
+                        break;
+                    } else if (percentile >= 71 && percentile < 90) {
+                        gradeBook.append(students[i].getFirstName() + " " + students[i].getLastName() + " B\n");
+                        break;
+                    } else if (percentile >= 50 && percentile < 71) {
+                        gradeBook.append(students[i].getFirstName() + " " + students[i].getLastName() + " C\n");
+                        break;
+                    } else if (percentile >= 11 && percentile < 50) {
+                        gradeBook.append(students[i].getFirstName() + " " + students[i].getLastName() + " D\n");
+                        break;
+                    } else {
+                        gradeBook.append(students[i].getFirstName() + " " + students[i].getLastName() + " F\n");
+                        break;
+                    }
+                }
+            }
         }
         return gradeBook.toString();
     }

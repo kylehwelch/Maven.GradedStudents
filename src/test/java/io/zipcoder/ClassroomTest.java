@@ -100,7 +100,7 @@ public class ClassroomTest {
 
         Student[] acStu = new Student[]{herman, gerald, clyde, dingo, meep, marvin, doc};
         Classroom classroom = new Classroom(acStu);
-        String expected = "Doc Lilly A\nMeep Dooboo B\nGerald Sillyface B\nClyde Theglide C\nHerman Buttlicker D\n" +
+        String expected = "Doc Lilly A\nMeep Dooboo B\nGerald Sillyface B\nClyde Theglide B\nHerman Buttlicker D\n" +
                 "Dingo Atemybaby D\nMarvin Martian D\n";
         String actual = classroom.getGradeBook(acStu);
 
