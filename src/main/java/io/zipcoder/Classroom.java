@@ -7,7 +7,6 @@ public class Classroom{
 
     //INITIALIZERS
     public Student[] students;
-//    List<Student> students = new ArrayList<Student>();
     int maxNumberOfStudents;
 
     private StudentComparator studentComparator = new StudentComparator();
@@ -18,8 +17,6 @@ public class Classroom{
         for(int i = 0; i < students.length; i++)
             if(students[i] == null) {
                 students[i] = student;
-//                System.out.println(student);
-//                System.out.println(Arrays.toString(students));
                 break;
             }
     }
@@ -51,12 +48,6 @@ public class Classroom{
         this.students = students;
         this.maxNumberOfStudents = 30;
     }
-
-
-
-    //SETTERS
-
-    //GETTERS
 
     public String getStudents() {
         System.out.println(Arrays.toString(students));
@@ -101,13 +92,10 @@ public class Classroom{
         StringBuilder gradeBook = new StringBuilder();
         List<Double> examScores = new ArrayList<>();
         for (Student s : students) {examScores.add(s.getAverageExamScore());}
-
-
         for (int i = 0; i < students.length; i++) {
             for (int j = 0; j < examScores.size(); j++) {
                 if (students[i].getAverageExamScore() == examScores.get(j)) {
                     percentile = 100 * ((examScores.size() - j) / (double)examScores.size());
-
                     if (percentile >= 90) {
                         gradeBook.append(students[i].getFirstName() + " " + students[i].getLastName() + " A\n");
                         break;
@@ -129,5 +117,4 @@ public class Classroom{
         }
         return gradeBook.toString();
     }
-
 }
